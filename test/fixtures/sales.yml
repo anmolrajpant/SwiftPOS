@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  discount: 1
+  vat: 1
+  totalAmt: 1
+
+two:
+  discount: 1
+  vat: 1
+  totalAmt: 1

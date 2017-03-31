@@ -1,0 +1,32 @@
+<h1>Sale#index</h1>
+<p>Find me in app/views/sale/index.html.erb</p>
+<div class="container">
+  <p id="notice"><%= notice %></p>
+
+  <h1>Inventories</h1>
+
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Item Name</th>
+        <th>Item Quantity</th>
+        <th>Item Description</th>
+        <th>Item Catagory</th>
+        <th>Item Price</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @inventories.each do |inventory| %>
+        <tr>
+          <td><%= inventory.itemName %></td>
+          <td><%= inventory.itemQuantity %></td>
+          <td><%= inventory.itemDesc %></td>
+          <td><%= inventory.itemCatagory %></td>
+          <td>Rs.<%= inventory.itemPrice %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
