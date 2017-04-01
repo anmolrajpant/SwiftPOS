@@ -25,7 +25,7 @@
       </div>
       <div class="field">
         <%= f.label ('Item Catagory:'), class: "control-label" %>
-        <%= f.text_area :itemCatagory, class: "form-control"  %>
+        <%= f.collection_select :itemCatagory, Inventory::CATAGORIES, :to_s, :to_s, class: "form-control" %>
       </div>
       <div class="field">
         <%= f.label ('Item Price'), class: "control-label" %>
