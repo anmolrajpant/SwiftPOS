@@ -23,9 +23,9 @@
           <td><%= inventory.itemDesc %></td>
           <td><%= inventory.itemCatagory %></td>
           <td>Rs.<%= inventory.itemPrice %></td>
-          <td ><%= link_to 'View', inventory, class: "btn btn-primary"%></td>
-          <td><%= link_to 'Edit', edit_inventory_path(inventory), class: "btn btn-info" %></td>
-          <td><%= link_to 'Delete', inventory, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+          <!-- <td ><%= link_to 'View', inventory, class: "btn btn-primary"%></td> -->
+          <td><%= link_to 'Edit', edit_inventory_path(inventory)%></td>
+          <td><%= link_to 'Delete', inventory, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>
     </tbody>
