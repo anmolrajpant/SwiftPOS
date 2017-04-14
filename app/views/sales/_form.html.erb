@@ -1,0 +1,42 @@
+<%= form_for(@sale) do |f| %>  
+  <% if @sale.errors.any? %>  
+    <div id="error_explanation">  
+      <h2><%= pluralize(@sale.errors.count, "error") %> prohibited this sale from being saved:</h2>  
+      <ul>  
+        <% @sale.errors.full_messages.each do |message| %>  
+        <li><%= message %></li>  
+        <% end %>  
+      </ul>  
+    </div>  
+  <% end %>
+
+  <div class="form-group">  
+    <%= f.label :name %><br>  
+    <%= f.text_field :name, class: "form-input" %>  
+  </div>  
+  <%= f.fields_for :items do |builder| %>   
+    <%= render 'item_fields', f: builder %>   
+  <% end %>   
+  <%= link_to_add_fields "Add Item", f, :items %>
+  <br>   
+  <div class="actions">  
+   <%= f.submit class: "btn btn-success" %>  
+  </div>  
+ <% end %> 
+
+ <script type="text/javascript">   
+  jQuery(function() {   
+   $('form').on('click', '.remove_fields', function(event) {   
+   $(this).prev('input[type=hidden]').val('1');   
+   $(this).closest('fieldset').hide();   
+   return event.preventDefault();   
+   });   
+   return $('form').on('click', '.add_fields', function(event) {   
+   var regexp, time;   
+   time = new Date().getTime();   
+   regexp = new RegExp($(this).data('id'), 'g');   
+   $(this).before($(this).data('fields').replace(regexp, time));   
+   return event.preventDefault();   
+   });   
+  });   
+  </script>

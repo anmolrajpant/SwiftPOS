@@ -1,0 +1,23 @@
+<h1>Listing Activities</h1>  
+<table class="table table-striped table-bordered table-condensed sortable">  
+  <thead>  
+    <tr>  
+      <th><%= "Activities"%></th>  
+    </tr>  
+  </thead>  
+  <tbody>  
+    <% @activities.each do |activity| %>  
+      <tr>  
+        <td valign="top">   
+          <%= activity.owner.try(:email) %>
+          <%= render_activity activity %>  
+        </td>  
+      </tr>  
+    <% end %>  
+  </tbody>  
+  <tfoot>  
+    <tr>  
+      <td colspan="3"></td>  
+    </tr>  
+  </tfoot>  
+</table>

@@ -1,0 +1,25 @@
+<table class="table table-striped">  
+  <thead>  
+    <tr>  
+      <th>Product</th>  
+      <th>price</th>  
+      <th>quantity</th>  
+      <th>total</th>  
+      <th></th>  
+    </tr>  
+  </thead>  
+  <tbody>  
+    <% @sale.items.each do |item| %>  
+      <tr>  
+      <td><%= item.product.name %></td>  
+      <td><%= item.product.price %></td>  
+      <td><%= item.quantity %></td>  
+      <td><%= item.total %></td>  
+    </tr>  
+    <% end %>  
+  </tbody>  
+</table>  
+<hr>  
+<p> Total Amount:</p>  
+  <STRONG>Rs. <%= @sale.total%></STRONG>  
+<hr> 

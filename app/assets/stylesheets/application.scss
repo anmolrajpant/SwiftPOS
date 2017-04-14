@@ -1,0 +1,48 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+body, html {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.logo img{
+	float:left; 
+	width:190px;
+	margin:0px auto;
+}
+.well{
+ 	width: 40%; 
+ 	margin:0px auto;  
+ 	border-radius:20px; 
+ 	text-align:center; 
+ 	opacity: 0.8; 
+ 	background-color: black; 
+ 	color: white; 
+}
+
+.footer-else{
+	background-color: #333333; 
+	height:30px; 
+	width: 100%; 
+	position:fixed !important;
+	position: absolute; 
+	bottom:0px; 
+	text-align: center;
+}
+
+.footer-if{
+	position: fixed;
+  	right: 0;
+  	bottom: 0;
+  	left: 0;
+  	padding: 1rem;
+  	background-color: #efefef;
+  	text-align: center;
+}
+
+.signinlogo{
+	opacity: 0.99; 
+	width:30%; 
+	margin: 0px auto;
+}

@@ -3,74 +3,74 @@
   <head>
     <title>SwiftPOS</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-  <% if user_signed_in? %>
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-      <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">SwiftPOS</a>
-        </div>
+    <% if user_signed_in? %>
+      <nav class="navbar navbar-default navbar-fixed-top">
+        <logo class= "logo"><img src="/assets/mainlogo.png"></logo>
+        <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li><a href="/sales">Sales<span class="sr-only">(current)</span></a></li>
+              <li><a href="/products">Product List</a></li>
+              <li><a href="/activities">Activity List</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><%= link_to current_user.email, edit_user_registration_path %></li>
+              <li><%= link_to "Add User", new_user_registration_path %></li>   
+              <li><%= link_to "Log Out" , destroy_user_session_path, method: :delete %></li>
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>  
+    <% else %>
+      <nav class="navbar navbar-default" style="background-color: #333333;">
+        <logo class= "logo"><img src="/assets/mainlogo.png"></logo>
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+              <li><%= link_to "Admin", admin_dashboard_url %></li>
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+        </nav>
+    <% end %>
 
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-          <li><a href="/inventories/:inventory_id/sale">Sales<span class="sr-only">(current)</span></a></li>
-          <li><a href="/inventories/">Inventory</a></li>
-          <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Report <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Monthly Report</a></li>
-            <li><a href="#">Weekly Report</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Most Sold Item</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Minimum Order Level Items</a></li>
-          </ul>
-        </li>          
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete%></li>
-        </ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
-    </nav>
-  <% elsif %>
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-      <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="/sale">SwiftPOS</a>
-        </div>
-
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">Admin Panel</a></li>
-        </ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
-    </nav>
-  <% end %>
-  <%= yield %>
-      <div class="alert alert-success"><%= notice %></div>
-      <div class="alert alert-warning"><%= alert %></div>
+    <div class="container" style="padding-top: 60px;">   
+      <%= yield %>
+    </div>
+    <!-- Footer --> 
+    <% if user_signed_in? %>
+      <footer class="footer-if">
+        <p class="text-muted">2017 swiftPOS &copy</p>
+      </footer>
+    <% else %>
+      <footer class="footer-else">
+        <p class="text-muted">2017 swiftPOS &copy</p>
+      </footer>
+    <%end%>
   </body>
 </html>
