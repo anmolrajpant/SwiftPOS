@@ -5,6 +5,7 @@
 <table class="table table-striped">
   <thead>
     <tr>
+      <th>Sale ID</th>
       <th>Name</th>
       <th>Created Date</th>
       <th>Total</th>
@@ -15,16 +16,17 @@
   <tbody>
     <% @sales.each do |sale| %>
       <tr>
+        <td>#<%= sale.id %></td>
         <td><%= sale.name %></td>
         <td><%= sale.created_at %></td>
-        <td><%= sale.total %></td>
-        <td><%= link_to 'Show', sale %></td>
+        <td>Rs.<%= sale.total %></td>
+        <td><%= link_to 'Details', sale %></td>
         <% if can? :update, Sale %>
         <td><%= link_to 'Edit', edit_sale_path(sale) %>
         </td>
         <%end%>
         <% if can? :destroy, Sale %>
-        <td><%= link_to 'Destroy', sale, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', sale, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <%end%>
       </tr>
     <% end %>

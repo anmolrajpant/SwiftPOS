@@ -58,4 +58,5 @@ gem 'public_activity'
 gem 'bootstrap-sass'
 gem 'activeadmin', github: 'activeadmin'
 gem 'inherited_resources', '~> 1.7'
-gem 'receipts'
+gem "chartkick"
+gem 'groupdate'

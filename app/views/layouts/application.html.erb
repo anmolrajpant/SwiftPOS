@@ -27,10 +27,20 @@
               <li><a href="/sales">Sales<span class="sr-only">(current)</span></a></li>
               <li><a href="/products">Product List</a></li>
               <li><a href="/activities">Activity List</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Report<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="/report/daily">Daily Report</a></li>
+                  <li><a href="/report/weekly">Weekly Report</a></li>
+                  <li><a href="/report/monthly">Monthly Report</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="/report/topselling">Top Selling Item</a></li>
+                </ul>
+              </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
+              <li><%= link_to Time.now.strftime("%I:%M:%S") %></li>
               <li><%= link_to current_user.email, edit_user_registration_path %></li>
-              <li><%= link_to "Add User", new_user_registration_path %></li>   
               <li><%= link_to "Log Out" , destroy_user_session_path, method: :delete %></li>
             </ul>
           </div><!-- /.navbar-collapse -->
@@ -56,10 +66,10 @@
             </ul>
           </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
-        </nav>
+      </nav>
     <% end %>
 
-    <div class="container" style="padding-top: 60px;">   
+    <div class="container" style="padding-top: 35px;">   
       <%= yield %>
     </div>
     <!-- Footer --> 

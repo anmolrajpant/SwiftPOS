@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'report/daily'
+
+  get 'report/weekly'
+
+  get 'report/monthly'
+
+  get 'report/topselling'
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   resources :activities

@@ -1,0 +1,27 @@
+<h1>Weekly Sales List</h1>
+<%= javascript_include_tag "https://www.gstatic.com/charts/loader.js" %>
+<%= column_chart Sale.group_by_day_of_week(:total, format: "%a").count, xtitle: "Days", ytitle:"total" %>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Sale ID</th>
+      <th>Name</th>
+      <th>Created Date</th>
+      <th>Total</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sales.each do |sale| %>
+      <tr>
+        <td>#<%= sale.id %></td>
+        <td><%= sale.name %></td>
+        <td><%= sale.created_at %></td>
+        <td>Rs.<%= sale.total %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
