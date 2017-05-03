@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'search/show'
+
   get 'report/daily'
 
   get 'report/weekly'
@@ -6,6 +8,9 @@ Rails.application.routes.draw do
   get 'report/monthly'
 
   get 'report/topselling'
+
+  get '/search', :to => 'search#show'
+  post '/search', :to => 'search#show'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
