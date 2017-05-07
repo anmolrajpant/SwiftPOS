@@ -2,7 +2,7 @@
 <div>
   <%= form_for :search,url: '/search'  do |f| %>
   <%= f.text_field :search_query %>
-  <%= f.submit 'Search' %>
+  <%= f.submit 'Search', class: "btn btn-primary" %>
   <% end %>
 </div>
 <table class="table table-striped">
@@ -25,9 +25,13 @@
         <td><%= product.name %></td>
         <td><%= product.Catagory%></td>
         <td>Rs.<%= product.price %></td>
-        <td><%= link_to 'View', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
+        <td><%= link_to 'Detail', product %></td>
+        <% if can? :update, Product %>
+        <td><%= link_to 'Update', edit_product_path(product) %></td>
+        <% end %>
+        <% if can? :destroy, Product %>
         <td><%= link_to 'Delete', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

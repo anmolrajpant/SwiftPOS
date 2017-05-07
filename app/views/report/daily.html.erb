@@ -1,6 +1,6 @@
 <h1>Today's Sales List</h1>
 <%= javascript_include_tag "https://www.gstatic.com/charts/loader.js" %>
-<%= pie_chart Product.group(:quantity).count %>
+<%= pie_chart Product.group(:catagory).count %>
 <table class="table table-striped">
   <thead>
     <tr>

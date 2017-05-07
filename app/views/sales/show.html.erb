@@ -29,4 +29,5 @@
 <hr>  
 <p> Total Amount:</p>  
   <STRONG>Rs. <%= @sale.total%></STRONG>  
-<hr> 
+<hr>
+<%= link_to "Print", '#', class: "btn btn-primary", onclick: 'window.print();return false;' %> 

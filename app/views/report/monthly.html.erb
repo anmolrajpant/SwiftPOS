@@ -1,7 +1,7 @@
 <h1>Monthly Sales List</h1>
 
 <%= javascript_include_tag "https://www.gstatic.com/charts/loader.js" %>
-<%= line_chart Sale.group_by_day(:total).count %>
+<%= line_chart Sale.group_by_day(:created_at).count %>
 
 <table class="table table-striped">
   <thead>

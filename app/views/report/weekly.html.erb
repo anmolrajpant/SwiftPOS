@@ -1,6 +1,6 @@
 <h1>Weekly Sales List</h1>
 <%= javascript_include_tag "https://www.gstatic.com/charts/loader.js" %>
-<%= column_chart Sale.group_by_day_of_week(:total, format: "%a").count, xtitle: "Days", ytitle:"total" %>
+<%= column_chart Sale.group_by_day_of_week(:created_at, format: "%a").count, xtitle: "Days", ytitle:"Total Sales" %>
 <table class="table table-striped">
   <thead>
     <tr>

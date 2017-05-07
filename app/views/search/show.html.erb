@@ -1,28 +1,30 @@
 <div id="search", class="well" style="margin-top: 40px;">
-	<h2>
-		Search Result
-	</h2>
-	<% if @results %>
-  	<% @results.each do |product| %>
-  	<strong>Name:</strong><%= product.name %><br>
-	    	<p>
-    <strong>Code:</strong>
-    <%= product.code %>
-  </p>
-  <p>
-  	<strong>Catagory:</strong>
-  	<%= product.Catagory %>
-  </p>
-
-  <p>
-    <strong>Price:</strong>
-    <%= product.price %>
-  </p>
-
-	<% end %>
-	<% else %>
-  		<tr>
-		  Product not found!
-	  	</tr>
-	<% end %>
+  <h2>
+    Search Result
+  </h2>
+  <% if @results %>
+    <% @results.each do |product| %>
+      <p>
+        <strong>Name:</strong>
+        <%= product.name %><br>
+      </p>
+      <p>
+        <strong>Code:</strong>
+        <%= product.code %>
+      </p>
+      <p>
+        <strong>Catagory:</strong>
+        <%= product.Catagory %>
+      </p>
+      <p>
+        <strong>Price:</strong>
+        <%= product.price %>
+      </p>
+      <%= link_to 'Back', products_path, class: "btn btn-default" %>
+    <% end %>
+  <% else %>
+    <tr>
+      Product not found!
+    </tr>
+  <% end %>
 </div>
