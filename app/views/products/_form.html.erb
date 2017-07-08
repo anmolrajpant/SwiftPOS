@@ -23,7 +23,7 @@
 
   <div class="form-group">
     <%= f.label :Catagory %>
-    <%= f.collection_select :Catagory, Product::CATAGORIES, :to_s, :to_s, class: "form-control" %>
+    <%= f.collection_select :catagory_id, Catagory.all, :id, :title, class: "form-control" %>
   </div>
 
   <div class="form-group">

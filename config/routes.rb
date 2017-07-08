@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :catagories
   get 'search/show'
 
   get 'report/daily'

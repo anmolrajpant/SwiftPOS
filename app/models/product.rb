@@ -3,8 +3,7 @@ class Product < ApplicationRecord
   has_many :items
   validates :name, presence: true
   validates :price, :numericality => { :greater_than_or_equal_to => 0}
-  CATAGORIES = ['Beauty & Hygiene','Men Grooming', 'Babies, Kinds & Toys', 'Toys & Games', 'Liquor & Tobacco', 'Grocery', 'Kitchen & Appliances','Accessories','Cakes & Gifts', 'Sweets', 'Health & Wellness','Frozen'] 
-
+  
   before_save :check_for_duplicates?
   def check_for_duplicates?
     if Product.where("name like = ?")
