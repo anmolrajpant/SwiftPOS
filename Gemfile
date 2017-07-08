@@ -62,3 +62,4 @@ gem 'inherited_resources', '~> 1.7'
 gem "chartkick"
 gem 'groupdate'
 gem "rails-erd"
+gem 'jquery-datatables-rails', '~> 3.4.0'
