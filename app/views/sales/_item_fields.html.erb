@@ -1,6 +1,6 @@
 <fieldset class="form-group">  
   <%= f.label :product, "Product" %>  
-  <%= f.collection_select :product_id, Product.all, :id, :name %>  
+  <%= f.collection_select :product_id, Product.all, :id, :name, class: "dropdown" %>  
   <%= f.label :quantity, "Quantity", id:"qua"%>  
   <%= f.text_field :quantity, class: 'padli' %>  
   <%= f.hidden_field :_destroy %>   

@@ -13,8 +13,13 @@
 //= require jquery
 //= require dataTables/jquery.dataTables
 //= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
+//= require select2
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require Chart.bundle
 //= require chartkick
 //= require_tree .
+
+$( "#dropdown" ).select2({
+    theme: "bootstrap"
+});
