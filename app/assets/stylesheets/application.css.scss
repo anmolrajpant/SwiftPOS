@@ -1,5 +1,9 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+/* 
+*= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
+*= require select2-bootstrap
+*/
 
 body, html {
   background-repeat: no-repeat;
