@@ -5,7 +5,7 @@
   <%= f.submit 'Search', class: "btn btn-primary" %>
   <% end %>
 </div>
-<table class="products">
+<table class="products table table-strip">
   <thead>
     <tr>
       <th>S.No</th>
@@ -23,7 +23,7 @@
         <td><%= index + 1 %> </td>
         <td><%= product.code %></td>
         <td><%= product.name %></td>
-        <td><%= product.Catagory%></td>
+        <td><%= product.catagory.title %></td>
         <td>Rs.<%= product.price %></td>
         <td><%= link_to 'Detail', product %></td>
         <% if can? :update, Product %>
