@@ -18,4 +18,8 @@ class Item < ApplicationRecord
         self.quantity * self.product.price  
    end  
   end
+
+  def decrement
+  	
+  end
 end

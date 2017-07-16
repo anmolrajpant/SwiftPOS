@@ -12,6 +12,7 @@
       <th>Code</th>
       <th>Name</th>
       <th>Catagory</th>
+      <th>Stock</th>
       <th>Price</th>
       <th></th>
     </tr>
@@ -24,6 +25,7 @@
         <td><%= product.code %></td>
         <td><%= product.name %></td>
         <td><%= product.catagory.title %></td>
+        <td><%= product.stock %></td>
         <td>Rs.<%= product.price %></td>
         <td><%= link_to 'Detail', product %></td>
         <% if can? :update, Product %>
