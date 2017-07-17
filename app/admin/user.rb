@@ -1,5 +1,5 @@
 ActiveAdmin.register User do
-  permit_params :email, :name, :password, :password_confirmation
+  permit_params :role_id, :email, :name, :password, :password_confirmation
 
   index do
     column :role
@@ -9,7 +9,7 @@ ActiveAdmin.register User do
 
   form do |f|
     f.inputs 'User' do
-      #f.input :role
+      f.input :role, input_html: {selected: user.role}
       f.input :email
       f.input :password
       f.input :password_confirmation
