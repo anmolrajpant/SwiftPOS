@@ -1,6 +1,8 @@
 <h1>Today's Sales List</h1>
 <%= javascript_include_tag "https://www.gstatic.com/charts/loader.js" %>
-<%= pie_chart Product.group(:catagory).count %>
+<% data_for_chart = {} %>
+<% Product.group(:catagory).count.each {|catagory,count| data_for_chart[catagory.title] = count} %>
+<%= pie_chart data_for_chart %>
 <table class="table table-striped">
   <thead>
     <tr>

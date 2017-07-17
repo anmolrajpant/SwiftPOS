@@ -25,7 +25,7 @@
         <td><%= product.code %></td>
         <td><%= product.name %></td>
         <td><%= product.catagory.title %></td>
-        <td><%= product.stock %></td>
+        <td><%= product.stock - Item.where(product_id: product.id).sum(:quantity) %></td>
         <td>Rs.<%= product.price %></td>
         <td><%= link_to 'Detail', product %></td>
         <% if can? :update, Product %>
